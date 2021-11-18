@@ -1,8 +1,6 @@
-const Aoijs = require("aoi.js")
+const Aoijs = require('aoi.js');
+const config = require('./config.js');
+const bot = new Aoijs.Bot(config.Bot);
+const fs = require('fs');
 
-const bot = new Aoijs.Bot({
-  token: "token do seu bot",
-  prefix: "aqui é seu prefixo",
-  intents: "all" 
-//ative todas as intents no discord developer portal, caso contrário não irá funcionar👍
-})
+
