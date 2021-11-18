@@ -14,3 +14,8 @@ require('./handler/callbacks')(bot)
 const loader = new Aoijs.LoadCommands(bot)
 loader.load(bot.cmd, "./commands/")
 
+//obtém a pasta e os arquivos de eventos👌
+const files = fs.readdirSync('./events').filter(file => file.endsWith('.js'))
+files.forEach( x => {
+require(`./events/${x}`)(bot)
+});  
